@@ -1,0 +1,967 @@
+{
+ "version": 1,
+ "asOf": "2026-11-19",
+ "instruments": [
+  {
+   "key": "deposito",
+   "nameKey": "Deposito",
+   "family": "kas",
+   "model": "series",
+   "taxRate": 0.2,
+   "syariah": false,
+   "riskLevel": 1,
+   "series": [
+    {
+     "year": 1990,
+     "returnPct": 17.5308
+    },
+    {
+     "year": 1991,
+     "returnPct": 23.3167
+    },
+    {
+     "year": 1992,
+     "returnPct": 19.6025
+    },
+    {
+     "year": 1993,
+     "returnPct": 14.5475
+    },
+    {
+     "year": 1994,
+     "returnPct": 12.5333
+    },
+    {
+     "year": 1995,
+     "returnPct": 16.7175
+    },
+    {
+     "year": 1996,
+     "returnPct": 17.2558
+    },
+    {
+     "year": 1997,
+     "returnPct": 20.0142
+    },
+    {
+     "year": 1998,
+     "returnPct": 39.0667
+    },
+    {
+     "year": 1999,
+     "returnPct": 25.7375
+    },
+    {
+     "year": 2000,
+     "returnPct": 12.5033
+    },
+    {
+     "year": 2001,
+     "returnPct": 15.4817
+    },
+    {
+     "year": 2002,
+     "returnPct": 15.5025
+    },
+    {
+     "year": 2003,
+     "returnPct": 10.59
+    },
+    {
+     "year": 2004,
+     "returnPct": 6.4433
+    },
+    {
+     "year": 2005,
+     "returnPct": 8.0792
+    },
+    {
+     "year": 2006,
+     "returnPct": 11.4108
+    },
+    {
+     "year": 2007,
+     "returnPct": 7.9758
+    },
+    {
+     "year": 2008,
+     "returnPct": 8.4925
+    },
+    {
+     "year": 2009,
+     "returnPct": 9.2783
+    },
+    {
+     "year": 2010,
+     "returnPct": 7.0167
+    },
+    {
+     "year": 2011,
+     "returnPct": 6.9308
+    },
+    {
+     "year": 2012,
+     "returnPct": 5.9467
+    },
+    {
+     "year": 2013,
+     "returnPct": 6.2642
+    },
+    {
+     "year": 2014,
+     "returnPct": 8.7525
+    },
+    {
+     "year": 2015,
+     "returnPct": 8.3367
+    },
+    {
+     "year": 2016,
+     "returnPct": 7.1659
+    },
+    {
+     "year": 2017,
+     "returnPct": 6.5183
+    },
+    {
+     "year": 2018,
+     "returnPct": 6.1292
+    },
+    {
+     "year": 2019,
+     "returnPct": 6.6883
+    },
+    {
+     "year": 2020,
+     "returnPct": 5.5042
+    },
+    {
+     "year": 2021,
+     "returnPct": 3.6658
+    },
+    {
+     "year": 2022,
+     "returnPct": 3.21
+    },
+    {
+     "year": 2023,
+     "returnPct": 4.6342
+    },
+    {
+     "year": 2024,
+     "returnPct": 5.4263
+    },
+    {
+     "year": 2025,
+     "returnPct": 5.4075
+    }
+   ],
+   "seriesSource": "Bank Dunia, World Development Indicators (FR.INR.DPST, suku bunga deposito; sumber IMF IFS)",
+   "seriesLicence": "CC BY 4.0",
+   "seriesUrl": "https://data.worldbank.org/indicator/FR.INR.DPST?locations=ID",
+   "asOf": "2026-11-19"
+  },
+  {
+   "key": "rd_pasar_uang",
+   "nameKey": "Reksadana pasar uang",
+   "family": "kas",
+   "model": "derived",
+   "derivedFrom": "deposito",
+   "spreadPct": 0.75,
+   "applyBaseTax": true,
+   "taxRate": 0.0,
+   "syariah": false,
+   "riskLevel": 1,
+   "seriesSource": "Asumsi: bunga deposito setelah pajak + 0,75 poin per tahun (tanpa data NAB reksadana)",
+   "seriesLicence": "CC BY 4.0",
+   "seriesUrl": "https://data.worldbank.org/indicator/FR.INR.DPST?locations=ID",
+   "asOf": "2026-11-19"
+  },
+  {
+   "key": "rd_syariah",
+   "nameKey": "Reksadana pasar uang syariah",
+   "family": "kas",
+   "model": "derived",
+   "derivedFrom": "deposito",
+   "spreadPct": 0.5,
+   "applyBaseTax": true,
+   "taxRate": 0.0,
+   "syariah": true,
+   "riskLevel": 1,
+   "seriesSource": "Asumsi: bagi hasil mengikuti bunga deposito setelah pajak + 0,5 poin per tahun (tanpa data NAB)",
+   "seriesLicence": "CC BY 4.0",
+   "seriesUrl": "https://data.worldbank.org/indicator/FR.INR.DPST?locations=ID",
+   "asOf": "2026-11-19"
+  },
+  {
+   "key": "ori",
+   "nameKey": "ORI / SBN ritel",
+   "family": "obligasi",
+   "model": "coupon",
+   "taxRate": 0.1,
+   "syariah": false,
+   "riskLevel": 1,
+   "couponRange": {
+    "low": 6.9,
+    "high": 6.9,
+    "latest": 6.9
+   },
+   "seriesSource": "Memorandum Informasi ORI030T3, Pemerintah RI (masa penawaran 6–30 Jul 2026); setelah jatuh tempo diasumsikan diputar ulang dengan kupon yang sama",
+   "seriesLicence": "Data publik pemerintah",
+   "seriesUrl": "https://www.djppr.kemenkeu.go.id/",
+   "asOf": "2026-07-30"
+  },
+  {
+   "key": "sukuk",
+   "nameKey": "Sukuk ritel",
+   "family": "obligasi",
+   "model": "coupon",
+   "taxRate": 0.1,
+   "syariah": true,
+   "riskLevel": 1,
+   "couponRange": {
+    "low": 6.8,
+    "high": 6.8,
+    "latest": 6.8
+   },
+   "seriesSource": "Kemenkeu, materi penawaran SR025 (21 Agt–16 Sep 2026); setelah jatuh tempo diasumsikan diputar ulang dengan imbalan yang sama",
+   "seriesLicence": "Data publik pemerintah",
+   "seriesUrl": "https://media.kemenkeu.go.id/getmedia/1b127fad-f85c-4aa1-be4a-8976f9a7b2b9/SR025-Slide-Marketing.pdf",
+   "asOf": "2026-09-16"
+  },
+  {
+   "key": "emas",
+   "nameKey": "Emas",
+   "family": "emas",
+   "model": "series",
+   "taxRate": 0.0,
+   "syariah": true,
+   "riskLevel": 2,
+   "series": [
+    {
+     "year": 1986,
+     "returnPct": 33.5715
+    },
+    {
+     "year": 1987,
+     "returnPct": 55.6295
+    },
+    {
+     "year": 1988,
+     "returnPct": 0.3817
+    },
+    {
+     "year": 1989,
+     "returnPct": -8.3582
+    },
+    {
+     "year": 1990,
+     "returnPct": 4.6657
+    },
+    {
+     "year": 1991,
+     "returnPct": -0.0406
+    },
+    {
+     "year": 1992,
+     "returnPct": -1.2202
+    },
+    {
+     "year": 1993,
+     "returnPct": 7.6139
+    },
+    {
+     "year": 1994,
+     "returnPct": 10.5047
+    },
+    {
+     "year": 1995,
+     "returnPct": 4.1072
+    },
+    {
+     "year": 1996,
+     "returnPct": 5.1241
+    },
+    {
+     "year": 1997,
+     "returnPct": 6.077
+    },
+    {
+     "year": 1998,
+     "returnPct": 205.789
+    },
+    {
+     "year": 1999,
+     "returnPct": -25.6601
+    },
+    {
+     "year": 2000,
+     "returnPct": 7.3147
+    },
+    {
+     "year": 2001,
+     "returnPct": 18.3254
+    },
+    {
+     "year": 2002,
+     "returnPct": 3.7987
+    },
+    {
+     "year": 2003,
+     "returnPct": 8.0265
+    },
+    {
+     "year": 2004,
+     "returnPct": 17.32
+    },
+    {
+     "year": 2005,
+     "returnPct": 18.0214
+    },
+    {
+     "year": 2006,
+     "returnPct": 28.2186
+    },
+    {
+     "year": 2007,
+     "returnPct": 15.0564
+    },
+    {
+     "year": 2008,
+     "returnPct": 32.7528
+    },
+    {
+     "year": 2009,
+     "returnPct": 19.5679
+    },
+    {
+     "year": 2010,
+     "returnPct": 10.1263
+    },
+    {
+     "year": 2011,
+     "returnPct": 23.6234
+    },
+    {
+     "year": 2012,
+     "returnPct": 13.8671
+    },
+    {
+     "year": 2013,
+     "returnPct": -5.7781
+    },
+    {
+     "year": 2014,
+     "returnPct": 1.6979
+    },
+    {
+     "year": 2015,
+     "returnPct": 3.4912
+    },
+    {
+     "year": 2016,
+     "returnPct": 6.9582
+    },
+    {
+     "year": 2017,
+     "returnPct": 1.2348
+    },
+    {
+     "year": 2018,
+     "returnPct": 7.3851
+    },
+    {
+     "year": 2019,
+     "returnPct": 9.0244
+    },
+    {
+     "year": 2020,
+     "returnPct": 31.0325
+    },
+    {
+     "year": 2021,
+     "returnPct": -0.2512
+    },
+    {
+     "year": 2022,
+     "returnPct": 3.8422
+    },
+    {
+     "year": 2023,
+     "returnPct": 10.7017
+    },
+    {
+     "year": 2024,
+     "returnPct": 27.8982
+    }
+   ],
+   "seriesSource": "Bank Dunia, Commodity Price Data (Pink Sheet), emas US$/troy oz rata-rata tahunan, dikali kurs WDI PA.NUS.FCRF",
+   "seriesLicence": "CC BY 4.0",
+   "seriesUrl": "https://www.worldbank.org/en/research/commodity-markets",
+   "asOf": "2026-11-19"
+  },
+  {
+   "key": "saham",
+   "nameKey": "Indeks saham Indonesia",
+   "family": "saham",
+   "model": "series",
+   "taxRate": 0.0,
+   "syariah": false,
+   "riskLevel": 3,
+   "series": [
+    {
+     "year": 1996,
+     "returnPct": 21.2498
+    },
+    {
+     "year": 1997,
+     "returnPct": -67.2444
+    },
+    {
+     "year": 1998,
+     "returnPct": 147.5547
+    },
+    {
+     "year": 1999,
+     "returnPct": 53.0455
+    },
+    {
+     "year": 2000,
+     "returnPct": -58.2315
+    },
+    {
+     "year": 2001,
+     "returnPct": -0.7425
+    },
+    {
+     "year": 2002,
+     "returnPct": 20.9538
+    },
+    {
+     "year": 2003,
+     "returnPct": 56.3399
+    },
+    {
+     "year": 2004,
+     "returnPct": 45.2163
+    },
+    {
+     "year": 2005,
+     "returnPct": 18.4254
+    },
+    {
+     "year": 2006,
+     "returnPct": 58.49
+    },
+    {
+     "year": 2007,
+     "returnPct": 48.9678
+    },
+    {
+     "year": 2008,
+     "returnPct": -58.6967
+    },
+    {
+     "year": 2009,
+     "returnPct": 146.4571
+    },
+    {
+     "year": 2010,
+     "returnPct": 20.6473
+    },
+    {
+     "year": 2011,
+     "returnPct": -2.4243
+    },
+    {
+     "year": 2012,
+     "returnPct": 10.0347
+    },
+    {
+     "year": 2013,
+     "returnPct": -15.5304
+    },
+    {
+     "year": 2014,
+     "returnPct": 36.6488
+    },
+    {
+     "year": 2015,
+     "returnPct": -13.2119
+    },
+    {
+     "year": 2016,
+     "returnPct": 15.6723
+    },
+    {
+     "year": 2017,
+     "returnPct": 17.2736
+    },
+    {
+     "year": 2018,
+     "returnPct": -3.7545
+    },
+    {
+     "year": 2019,
+     "returnPct": 6.4242
+    },
+    {
+     "year": 2020,
+     "returnPct": -6.899
+    },
+    {
+     "year": 2021,
+     "returnPct": -3.6305
+    },
+    {
+     "year": 2022,
+     "returnPct": -3.9631
+    },
+    {
+     "year": 2023,
+     "returnPct": 5.0383
+    },
+    {
+     "year": 2024,
+     "returnPct": -6.0558
+    },
+    {
+     "year": 2025,
+     "returnPct": 7.64
+    }
+   ],
+   "seriesSource": "Bank Dunia, World Development Indicators (CM.MKT.INDX.ZG, S&P Global Equity Indices, Indonesia, perubahan harga dalam US$), dikonversi ke rupiah dengan kurs PA.NUS.FCRF; harga saja, tanpa dividen",
+   "seriesLicence": "CC BY 4.0",
+   "seriesUrl": "https://data.worldbank.org/indicator/CM.MKT.INDX.ZG?locations=ID",
+   "asOf": "2026-11-19"
+  },
+  {
+   "key": "rd_saham",
+   "nameKey": "Reksadana saham",
+   "family": "saham",
+   "model": "derived",
+   "derivedFrom": "saham",
+   "spreadPct": -2.0,
+   "applyBaseTax": false,
+   "taxRate": 0.0,
+   "syariah": false,
+   "riskLevel": 3,
+   "seriesSource": "Asumsi: indeks saham Indonesia dikurangi biaya 2 poin per tahun (tanpa data NAB reksadana)",
+   "seriesLicence": "CC BY 4.0",
+   "seriesUrl": "https://data.worldbank.org/indicator/CM.MKT.INDX.ZG?locations=ID",
+   "asOf": "2026-11-19"
+  },
+  {
+   "key": "properti",
+   "nameKey": "Properti",
+   "family": "properti",
+   "model": "series",
+   "taxRate": 0.0,
+   "saleTaxRate": 0.025,
+   "syariah": true,
+   "riskLevel": 2,
+   "series": [
+    {
+     "year": 2003,
+     "returnPct": 6.1521
+    },
+    {
+     "year": 2004,
+     "returnPct": 3.9874
+    },
+    {
+     "year": 2005,
+     "returnPct": 3.9543
+    },
+    {
+     "year": 2006,
+     "returnPct": 5.2653
+    },
+    {
+     "year": 2007,
+     "returnPct": 1.893
+    },
+    {
+     "year": 2008,
+     "returnPct": 2.4465
+    },
+    {
+     "year": 2009,
+     "returnPct": 2.2037
+    },
+    {
+     "year": 2010,
+     "returnPct": 2.8172
+    },
+    {
+     "year": 2011,
+     "returnPct": 4.6506
+    },
+    {
+     "year": 2012,
+     "returnPct": 4.5833
+    },
+    {
+     "year": 2013,
+     "returnPct": 12.0316
+    },
+    {
+     "year": 2014,
+     "returnPct": 7.019
+    },
+    {
+     "year": 2015,
+     "returnPct": 5.5631
+    },
+    {
+     "year": 2016,
+     "returnPct": 3.1585
+    },
+    {
+     "year": 2017,
+     "returnPct": 3.1575
+    },
+    {
+     "year": 2018,
+     "returnPct": 3.085
+    },
+    {
+     "year": 2019,
+     "returnPct": 1.345
+    },
+    {
+     "year": 2020,
+     "returnPct": 1.2704
+    },
+    {
+     "year": 2021,
+     "returnPct": 1.0304
+    },
+    {
+     "year": 2022,
+     "returnPct": 1.7938
+    },
+    {
+     "year": 2023,
+     "returnPct": 1.8546
+    },
+    {
+     "year": 2024,
+     "returnPct": 1.6208
+    },
+    {
+     "year": 2025,
+     "returnPct": 0.9131
+    }
+   ],
+   "seriesSource": "BIS, Residential property prices: selected series (WS_SPP, Indonesia, nominal; sumber Bank Indonesia), rata-rata tahunan dari data kuartalan",
+   "seriesLicence": "BIS terms of permitted use (sumber dikutip, tanpa biaya tambahan)",
+   "seriesUrl": "https://data.bis.org/topics/RPP",
+   "asOf": "2026-11-19"
+  }
+ ],
+ "inflation": {
+  "tenYearMeanPct": 2.9017,
+  "series": [
+   {
+    "year": 1985,
+    "returnPct": 4.7245
+   },
+   {
+    "year": 1986,
+    "returnPct": 5.8227
+   },
+   {
+    "year": 1987,
+    "returnPct": 9.2787
+   },
+   {
+    "year": 1988,
+    "returnPct": 8.0454
+   },
+   {
+    "year": 1989,
+    "returnPct": 6.4155
+   },
+   {
+    "year": 1990,
+    "returnPct": 7.8192
+   },
+   {
+    "year": 1991,
+    "returnPct": 9.4191
+   },
+   {
+    "year": 1992,
+    "returnPct": 7.5235
+   },
+   {
+    "year": 1993,
+    "returnPct": 9.6719
+   },
+   {
+    "year": 1994,
+    "returnPct": 8.532
+   },
+   {
+    "year": 1995,
+    "returnPct": 9.4203
+   },
+   {
+    "year": 1996,
+    "returnPct": 7.9733
+   },
+   {
+    "year": 1997,
+    "returnPct": 6.2262
+   },
+   {
+    "year": 1998,
+    "returnPct": 58.451
+   },
+   {
+    "year": 1999,
+    "returnPct": 20.4778
+   },
+   {
+    "year": 2000,
+    "returnPct": 3.6886
+   },
+   {
+    "year": 2001,
+    "returnPct": 11.5001
+   },
+   {
+    "year": 2002,
+    "returnPct": 11.9001
+   },
+   {
+    "year": 2003,
+    "returnPct": 6.7573
+   },
+   {
+    "year": 2004,
+    "returnPct": 6.0641
+   },
+   {
+    "year": 2005,
+    "returnPct": 10.4532
+   },
+   {
+    "year": 2006,
+    "returnPct": 13.1087
+   },
+   {
+    "year": 2007,
+    "returnPct": 6.4066
+   },
+   {
+    "year": 2008,
+    "returnPct": 10.2267
+   },
+   {
+    "year": 2009,
+    "returnPct": 4.3864
+   },
+   {
+    "year": 2010,
+    "returnPct": 5.1342
+   },
+   {
+    "year": 2011,
+    "returnPct": 5.356
+   },
+   {
+    "year": 2012,
+    "returnPct": 4.2795
+   },
+   {
+    "year": 2013,
+    "returnPct": 6.4125
+   },
+   {
+    "year": 2014,
+    "returnPct": 6.3949
+   },
+   {
+    "year": 2015,
+    "returnPct": 6.3631
+   },
+   {
+    "year": 2016,
+    "returnPct": 3.5258
+   },
+   {
+    "year": 2017,
+    "returnPct": 3.8088
+   },
+   {
+    "year": 2018,
+    "returnPct": 3.1983
+   },
+   {
+    "year": 2019,
+    "returnPct": 3.0306
+   },
+   {
+    "year": 2020,
+    "returnPct": 1.9198
+   },
+   {
+    "year": 2021,
+    "returnPct": 1.5601
+   },
+   {
+    "year": 2022,
+    "returnPct": 4.2095
+   },
+   {
+    "year": 2023,
+    "returnPct": 3.6694
+   },
+   {
+    "year": 2024,
+    "returnPct": 2.1815
+   },
+   {
+    "year": 2025,
+    "returnPct": 1.9133
+   }
+  ],
+  "source": "Bank Dunia, World Development Indicators (FP.CPI.TOTL.ZG, inflasi harga konsumen)",
+  "licence": "CC BY 4.0",
+  "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=ID",
+  "asOf": "2026-11-19"
+ },
+ "figures": {
+  "taxDeposito": {
+   "value": 0.2,
+   "label": "PPh final bunga deposito dan tabungan",
+   "source": "PP 131/2000 Pasal 2 huruf c angka 1 jo PP 123/2015; PMK 212/PMK.03/2018 Pasal 5(1)c (tidak dipotong untuk saldo sampai Rp7.500.000, Pasal 7 huruf a)",
+   "url": "https://www.pajak.go.id/sites/default/files/2019-06/212_PMK.03_2018Per.pdf",
+   "asOf": "2026-11-19"
+  },
+  "taxSbn": {
+   "value": 0.1,
+   "label": "PPh final kupon/imbalan SBN ritel (ORI, SR)",
+   "source": "PP 91/2021 Pasal 2 ayat (2)",
+   "url": "https://www.pajak.go.id/en/node/70382",
+   "asOf": "2026-11-19"
+  },
+  "pphPropertySale": {
+   "value": 0.025,
+   "label": "PPh final penjual tanah/bangunan",
+   "source": "PP 34/2016 Pasal 2 ayat (1) huruf a",
+   "url": "https://www.pajak.go.id/en/node/63052",
+   "asOf": "2026-11-19"
+  },
+  "oriCoupons": {
+   "value": {
+    "low": 6.9,
+    "high": 6.9,
+    "latest": 6.9
+   },
+   "label": "Kupon ORI030T3 (tetap, 3 tahun)",
+   "source": "Memorandum Informasi ORI030T3, Pemerintah RI (masa penawaran 6–30 Jul 2026); setelah jatuh tempo diasumsikan diputar ulang dengan kupon yang sama",
+   "url": "https://www.djppr.kemenkeu.go.id/",
+   "asOf": "2026-07-30"
+  },
+  "srCoupons": {
+   "value": {
+    "low": 6.8,
+    "high": 6.8,
+    "latest": 6.8
+   },
+   "label": "Imbalan SR025T3 (tetap, 3 tahun)",
+   "source": "Kemenkeu, materi penawaran SR025 (21 Agt–16 Sep 2026); setelah jatuh tempo diasumsikan diputar ulang dengan imbalan yang sama",
+   "url": "https://media.kemenkeu.go.id/getmedia/1b127fad-f85c-4aa1-be4a-8976f9a7b2b9/SR025-Slide-Marketing.pdf",
+   "asOf": "2026-09-16"
+  },
+  "pinkSheetLicence": {
+   "value": "CC BY 4.0",
+   "label": "Lisensi data harga komoditas Bank Dunia",
+   "source": "World Bank Data Catalog, dataset 0038238 Commodity Prices - History and Projections",
+   "url": "https://datacatalog.worldbank.org/search/dataset/0038238/commodity-prices-history-and-projections",
+   "asOf": "2026-11-19"
+  },
+  "biRate": {
+   "value": 6.0,
+   "label": "BI-Rate",
+   "source": "Bank Indonesia, tabel BI-Rate (berlaku 18 Nov 2026)",
+   "url": "https://www.bi.go.id/id/statistik/indikator/bi-rate.aspx",
+   "asOf": "2026-11-18"
+  },
+  "lpsTbp": {
+   "value": 3.75,
+   "label": "Tingkat bunga penjaminan LPS, bank umum (rupiah)",
+   "source": "LPS, periode 1 Okt 2026–31 Jan 2027",
+   "url": "https://www.lps.go.id/",
+   "asOf": "2026-10-01"
+  },
+  "kprFloatingSpread": {
+   "value": {
+    "low": 5.0,
+    "high": 7.0
+   },
+   "label": "Selisih bunga floating KPR di atas BI-Rate (asumsi)",
+   "source": "Asumsi dari kisaran bunga KPR floating bank 2026; ubah sesuai tawaran bankmu",
+   "url": "",
+   "asOf": "2026-11-19"
+  },
+  "bphtb": {
+   "value": {
+    "rate": 0.05,
+    "npoptkpMin": 80000000
+   },
+   "label": "BPHTB (tarif paling tinggi; NPOPTKP paling sedikit)",
+   "source": "UU 1/2022 Pasal 47 ayat (1) dan Pasal 46 ayat (5); tarif dan NPOPTKP daerahmu diatur Perda",
+   "url": "https://djpk.kemenkeu.go.id/wp-content/uploads/2022/01/Salinan-UU-Nomor-1-Tahun-2022.pdf",
+   "asOf": "2026-11-19"
+  },
+  "bipih": {
+   "value": {
+    "year": 2026,
+    "amount": 54193806.58
+   },
+   "label": "Bipih reguler 1447 H, rata-rata",
+   "source": "Rata-rata hasil kesepakatan pemerintah dan Komisi VIII DPR; Keppres 34/2025 menetapkan Bipih per embarkasi (mis. Aceh Rp45.109.422, Surabaya Rp60.645.422)",
+   "url": "https://www.setneg.go.id/baca/index/inilah_keppres_34_2025_tentang_biaya_penyelenggaraan_ibadah_haji_1447_h",
+   "asOf": "2026-11-19"
+  },
+  "setoranAwal": {
+   "value": 25000000,
+   "label": "Setoran awal haji reguler (asumsi)",
+   "source": "Angka yang umum dipakai bank penerima setoran; belum diverifikasi dari keputusan menteri yang berlaku, pastikan di bankmu",
+   "url": "",
+   "asOf": "2026-11-19"
+  },
+  "umrohReference": {
+   "value": 23000000,
+   "label": "Biaya umroh (asumsi)",
+   "source": "Asumsi setara biaya referensi yang diberitakan (KMA 1021/2023); belum diverifikasi, ganti dengan harga paket pilihanmu",
+   "url": "",
+   "asOf": "2026-11-19"
+  },
+  "hajiWaitYears": {
+   "value": 26,
+   "label": "Masa tunggu haji (asumsi)",
+   "source": "Asumsi; cek estimasi keberangkatan resmi untuk nomor porsimu",
+   "url": "",
+   "asOf": "2026-11-19"
+  },
+  "bipihGrowthPct": {
+   "value": 3.0,
+   "label": "Kenaikan Bipih per tahun (asumsi)",
+   "source": "Asumsi, ubah sendiri",
+   "url": "",
+   "asOf": "2026-11-19"
+  },
+  "rentGrowthPct": {
+   "value": 5.0,
+   "label": "Kenaikan sewa per tahun (asumsi)",
+   "source": "Asumsi, ubah sendiri",
+   "url": "",
+   "asOf": "2026-11-19"
+  }
+ }
+}
