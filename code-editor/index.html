@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastgood: Widget Scripts</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<p class="label">App</p>
+<h1>Lastgood: Widget Scripts</h1>
+<p class="lead">Run JavaScript code by commit</p>
+<p>Your Home Screen widgets run only the last commit whose test run passed, so a widget&#39;s script can be edited on the train without breaking the widget. Scripts stay plain JavaScript or TypeScript files in a Git repository you own.</p>
+<p>THE SHELF<br>The first screen is your shelf. Each slot is drawn as the widget it feeds, with its live output, the commit it runs (&quot;e4f5a6b · 6 days clean&quot;) and a strip of its test runs: filled for passed, a hollow ring for failed. Back one puts the previous passed commit on the widget in one tap, or press and drag the pin back along the strip.</p>
+<p>EDIT, COMMIT, THEN IT MOVES<br>Edits on the bench are drafts; the widget keeps running its commit. Commit, and Lastgood runs each changed script once with the sample input beside it (sample.json, or a // @sample line at the top). A pass moves that slot to the new commit. A throw or a timeout is recorded with its line, and the widget stays on the last good commit.</p>
+<p>YOUR FILES, YOUR GIT<br>Open a folder in place from Files (iCloud Drive, On My iPhone, another Git app&#39;s repository) or clone over HTTPS with a personal access token kept in your Keychain. Line diffs, commit, fast-forward pull and push. Every save writes the plain file where it lives; nothing is kept only inside the app.</p>
+<p>WIDGETS AND SHORTCUTS<br>Small and medium Home Screen widgets, and a &quot;Run shelf script&quot; action that hands your Shortcut&#39;s text to the script and gives back its output. Both read the pinned commit, never the draft you&#39;re editing.</p>
+<p>PULLED CODE WAITS FOR YOU<br>Commits that arrive by pull never run on their own. Test one on its slot; the shelf moves to it only after it passes on your iPhone and you confirm on its diff.</p>
+<p>THE RUNTIME<br>JavaScriptCore with types stripped from TypeScript on the device. A script gets its input, output (text, a number and unit, rows, a symbol), console, files of its own repository, and fetch to hosts you allow one by one. It can&#39;t load code from a URL or build code from text. No script gallery, no downloads, no AI.</p>
+<p>FREE AND PLUS<br>Editing, Git, running and two shelf slots are free. Lastgood Plus adds as many slots as you like, widgets with a Run now button and on the Lock Screen, and several repositories each with its own shelf: $1.99 a month or $14.99 a year, each starting with a free week, or $39.99 once with no subscription.</p>
+<p>Each monthly or yearly plan renews automatically until you turn renewal off at least 24 hours before the period ends, and it&#39;s charged to your Apple Account when you confirm. Cancel anytime: turn renewal off or change plans under your Apple Account&#39;s subscriptions in Settings. The one-time purchase never renews. Restore is on the Plus page.</p>
+<p>Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/<br>Privacy Policy: https://curiouscrane.dev/code-editor/privacy</p>
+<ul class="links">
+<li><a href="privacy/">Privacy policy</a></li>
+<li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of use</a></li>
+<li><a href="mailto:code-editor@curiouscrane.dev?subject=Lastgood%3A%20Widget%20Scripts">Support: code-editor@curiouscrane.dev</a></li>
+</ul>
+</main>
+<footer>© 2026 Crane · <a href="mailto:code-editor@curiouscrane.dev">code-editor@curiouscrane.dev</a></footer>
+</body>
+</html>
