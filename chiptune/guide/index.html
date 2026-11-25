@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using Bitcue&#39;s cue files in your game</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<p class="label"><a href="../">Bitcue Chiptune Game Loops</a></p>
+<h1>Using Bitcue&#39;s cue files in your game</h1>
+<p>Bitcue writes a song as one loop in three intensities: Calm, Alert and Battle. This page is about getting those files into a game engine and switching between them on the bar line.</p>
+<h2>What you get</h2>
+<ul>
+<li><strong>Free: one loop.</strong> On the Export sheet, choose <strong>This loop</strong>, pick Calm, Alert or Battle and tap <strong>Save to Files</strong>. You get one WAV, named after the song and the cue (for example <code>lantern-cave-alert.wav</code>).</li>
+<li><strong>Bitcue Pro: the matched set.</strong> Choose <strong>Matched set</strong> and Bitcue writes a folder named after the song, with 8 files: <code>calm.wav</code>, <code>alert.wav</code> and <code>battle.wav</code>; <code>stems/calm.wav</code>, <code>stems/alert.wav</code> and <code>stems/battle.wav</code>; <code>cues.json</code>; and a MIDI file named after the song.</li>
+<li>The loops are full mixes: Alert contains everything in Calm plus the kick and snare, and Battle contains everything in Alert plus the lead. The stems are the opposite: each holds only what enters on that cue, so Calm + Alert stem + Battle stem adds up to Battle.</li>
+<li>Every WAV is 16-bit mono, 44,100 Hz, with one forward loop over the whole file stored in the file&#39;s <code>smpl</code> chunk (sample 0 to the last sample).</li>
+<li><code>cues.json</code> holds the numbers your engine needs: <code>tempo</code> (BPM), <code>beatsPerBar</code>, <code>bars</code>, <code>sampleRate</code> and <code>loopLengthSamples</code>.</li>
+</ul>
+<h2>Why the cues line up</h2>
+<p>All three loops come from the same song, so they share one tempo and one bar grid, and every file is exactly the same length to the sample: <code>bars × beatsPerBar × 60 ÷ tempo × 44,100</code>, rounded once. The last notes of the loop are folded back into the start, so a loop repeats without a click.</p>
+<p>Because of that, you can start Alert at the same playback position Calm has reached, or restart on the next bar line, and the music stays in time. Bar 1 of every file is the same bar.</p>
+<p>A new song starts at 8 bars. Pro also writes 16 and 32 bar loops. Tempo runs from 40 to 200 BPM and <code>beatsPerBar</code> in <code>cues.json</code> gives the beats in each bar.</p>
+<h2>Working out the bar length</h2>
+<p>Read <code>tempo</code> and <code>beatsPerBar</code> from <code>cues.json</code> and compute:</p>
+<pre><code>barSeconds = beatsPerBar * 60 / tempo</code></pre>
+<p>At 120 BPM in 4/4 a bar is 2 seconds, and an 8 bar loop is 16 seconds. To switch on the next bar line, find how far into the loop the music is, and wait for the time left in that bar:</p>
+<pre><code>position   = music.currentTime            // seconds into the loop
+wait       = barSeconds - (position % barSeconds)
+at (now + wait): switch to the new cue</code></pre>
+<p>Take the position from the audio clock your engine plays the music on, not from frame time, so the switch does not drift.</p>
+<h2>Unity</h2>
+<ul>
+<li>Drag the WAV files into the Project window. In the import settings you can leave <strong>Load Type</strong> as Compressed In Memory or Streaming for music.</li>
+<li>Unity does not read the loop points from the WAV, so tick <strong>Loop</strong> on the AudioSource that plays the cue.</li>
+<li>Use one AudioSource per cue. Start all three with <code>PlayScheduled</code> on the same DSP time, and set the volume of Alert and Battle to 0 until needed. Or use the stems the same way, with one AudioSource per stem.</li>
+<li>To switch, wait for the next bar line as above using <code>AudioSettings.dspTime</code>, then change which source is audible. With the full-mix loops, fade one out and the next in. With the stems, raise the next stem&#39;s volume.</li>
+</ul>
+<h2>Godot</h2>
+<ul>
+<li>Drop the WAV files into the project. In the Import dock, set <strong>Loop Mode</strong> to <strong>Detect From WAV</strong> (or <strong>Forward</strong>) and reimport.</li>
+<li>For the stems, add an <code>AudioStreamSynchronized</code> with one stream per stem and raise a stem&#39;s volume to climb a cue. Play it from an <code>AudioStreamPlayer</code>.</li>
+<li>For the three loops, use an <code>AudioStreamInteractive</code> with a clip for each cue. Set the transition between clips to start at <strong>Next Bar</strong> (<code>TRANSITION_FROM_TIME_NEXT_BAR</code>). The tempo and beats per bar in <code>cues.json</code> tell you where the bars fall if you need to check.</li>
+</ul>
+<h2>GameMaker</h2>
+<ul>
+<li>Add the WAV files as Sound assets.</li>
+<li>GameMaker plays the file through, so loop it in code: <code>audio_play_sound(snd_calm, 1, true)</code> for a looping sound.</li>
+<li>To switch on the bar line, keep a timer from the moment the loop started, work out the time left in the current bar as above, and when it runs out, start the next cue with <code>audio_play_sound_ext</code> at the position <code>audio_sound_get_track_position</code> reports for the current one, then stop the old one.</li>
+</ul>
+<h2>Other engines</h2>
+<p>Anything that can loop a WAV can play Bitcue loops. Load the three files, loop them, keep the same playback position across them, and switch when the bar time runs out. If you want to rebuild the song in your own tools, the MIDI file has a track per voice and cue, at the same tempo.</p>
+<h2>Using your music</h2>
+<p>Music you compose in Bitcue is yours to use in your games.</p>
+</main>
+<footer>© 2026 Crane · <a href="mailto:chiptune@curiouscrane.dev">chiptune@curiouscrane.dev</a></footer>
+</body>
+</html>
