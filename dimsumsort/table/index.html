@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https:; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex" />
+    <title>A table for you · Dim Sum Teahouse</title>
+    <meta
+      name="description"
+      content="A Dim Sum Teahouse table someone set for you. Open it in the app or get the game."
+    />
+    <!-- table.js adds app-argument (the validated code's deep link) before Safari reads the banner. -->
+    <meta name="apple-itunes-app" content="app-id=6826953098" />
+    <script src="table.js"></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="table.css" />
+  </head>
+  <body>
+    <main>
+      <p class="label">Dim Sum Teahouse</p>
+      <h1 id="title">A table for you</h1>
+      <p class="lead" id="lead">Someone set a table in Dim Sum Teahouse and sent it to you.</p>
+
+      <div id="table" class="teatable" hidden></div>
+
+      <p id="open-wrap" hidden><a id="open" class="button" href="#">Open in Dim Sum Teahouse</a></p>
+      <p>
+        <a href="https://apps.apple.com/app/id6826953098"
+          ><img
+            src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+            alt="Download on the App Store"
+            width="150"
+            height="50"
+        /></a>
+      </p>
+      <p id="how">
+        Dim Sum Teahouse is a puzzle game: lift bamboo steamers and set each one on the cart that serves its dish, in as
+        few moves as you can. Your iPhone works out the fewest moves for this table when you open it.
+      </p>
+      <p id="later" hidden>Don't have the game yet? Get it, then come back to this page and tap Open.</p>
+
+      <p id="code-wrap" hidden>
+        <span class="label">Table code</span><br />
+        <code id="code"></code>
+      </p>
+      <p id="bad" hidden>
+        This link doesn't hold a table code the app can read. Ask whoever sent it to share it again.
+      </p>
+
+      <ul class="links">
+        <li><a href="../">About the game</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+      </ul>
+    </main>
+    <footer>Crane</footer>
+  </body>
+</html>
