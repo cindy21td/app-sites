@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["55KH4DKW5R.com.crane.investasisimulator"],
+        "components": [
+          { "/": "/investasi-simulator/rencana", "comment": "Rentang: a plan sent from the account's salary planner (?setoran=<rupiah>)" },
+          { "/": "/investasi-simulator/rencana/", "comment": "same, trailing slash" }
+        ]
+      }
+    ]
+  }
+}
